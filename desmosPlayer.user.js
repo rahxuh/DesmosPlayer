@@ -741,7 +741,7 @@ function desmosPlayer (program, properties={}) {
         if (saveButton !== undefined) {
             resetState();
         } else {
-            const saveButtonContainer = document.querySelector('.title-div');
+            const saveButtonContainer = document.querySelector('.align-left-container');
             saveButton = saveButtonContainer.querySelector('.dcg-action-save');
 
 
@@ -1084,20 +1084,19 @@ function isAProgram (text) {
              .prog-action-newexpression .dcg-icon-new-expression::before {
                content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAUCAIAAAD3FQHqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABGSURBVDhPY6AiYATi////QziUAEZGRiYoc7ABhB+BjqTEs1T2IzXNwu5HIBvCwA+QwwSoZbCG16gfCYBRPw4aP1IPMDAAAA+SRRngEMxiAAAAAElFTkSuQmCC);
              }
-             .title-div .player-button {
+             .align-left-container .player-button {
                 position: relative;
                 display: inline-block;
-                top: -16px;
                 height: 28px;
                 line-height: 28px;
                 padding: 0 15px;
                 margin-left: 8px;
                 border-radius: 20px;
              }
-             .title-div .start-button {
+             .align-left-container .start-button {
                 margin-left: 100px;
              }
-             .title-div .player-btn-disabled {
+             .align-left-container .player-btn-disabled {
                 border-width: 1px;
                 border-color: #DDD;
                 border-style: solid;
