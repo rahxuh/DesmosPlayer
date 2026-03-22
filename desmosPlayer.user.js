@@ -1114,8 +1114,8 @@ function isAProgram (text) {
                 if (document.querySelector('.dcg-icon-new-expression') && !newThreeNode) {
                     const newNode = newExpressionNode.cloneNode(true);
                     newNode.classList.remove('dcg-action-newexpression');
-                    newNode.classList.add('prog-action-newexpression');
-                    newNode.querySelector('i').nextSibling.nodeValue = 'program';
+                    newNode.classList.add('prog-action-newexpression');       
+                    newNode.querySelector('i').parentNode.nextSibling.nodeValue = 'program';
                     newNode.addEventListener('click', () => {
                         const d = Calc.controller.createItemModel({
                             text: `// @desmosPlayer (${versionStr})\n\n// Helpful constants\nconst id1 = 1;\n\n// Program array\nconst program = [\n\nsetValue(id1, 0),\nhide(id1)\n\n]\n\ndesmosPlayer(program, {debugMode: true})`,
@@ -1204,7 +1204,7 @@ function isAProgram (text) {
 
         function handleDispatchedEvent (e) {
             switch (e.type) {
-                case 'toggle-add-expression':
+                case 'open-add-expression':
                     // Sneak our program item into the add-expression menu before it displays
                     addToExpressionDropdown();
                     break;
