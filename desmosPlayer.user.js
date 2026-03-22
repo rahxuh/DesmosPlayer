@@ -1028,43 +1028,43 @@ function isAProgram (text) {
         function injectStyle() {
             const styleEl = document.createElement('style')
             styleEl.innerHTML = `
-             .dcg-calculator-api-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-icon-text {
+             .dcg-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-icon-text {
                  opacity: .8;
                  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
                  filter: alpha(opacity=80);
              }
-             .dcg-calculator-api-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-circular-icon-container.dcg-hovered .dcg-icon-text {
+             .dcg-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-circular-icon-container.dcg-hovered .dcg-icon-text {
                  opacity: 1;
                  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
                  filter: alpha(opacity=100);
              }
              .dcg-drag-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-smart-textarea-container .dcg-displayTextarea,
              .dcg-drag-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-smart-textarea-container .dcg-smart-textarea,
-             .dcg-calculator-api-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-smart-textarea-container .dcg-displayTextarea,
-             .dcg-calculator-api-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-smart-textarea-container .dcg-smart-textarea {
+             .dcg-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-smart-textarea-container .dcg-displayTextarea,
+             .dcg-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-smart-textarea-container .dcg-smart-textarea {
                 font-family: courier;
                 font-size: 80%;
              }
-             .dcg-calculator-api-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-circular-icon-container {
+             .dcg-container .dcg-expressionitem.dcg-expressiontext.program-textexpr .dcg-circular-icon-container {
                 position: sticky;
                 left: 3px;
                 cursor: pointer;
               }
-              .dcg-calculator-api-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.dcg-selected .dcg-circular-icon,
-              .dcg-calculator-api-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.dcg-dragging .dcg-circular-icon {
+              .dcg-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.dcg-selected .dcg-circular-icon,
+              .dcg-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.dcg-dragging .dcg-circular-icon {
                 border-color: #fff;
                 opacity: .9;
               }
-              .dcg-calculator-api-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.dcg-selected .dcg-circular-icon.dcg-hovered .dcg-circular-icon,
-              .dcg-calculator-api-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.dcg-dragging .dcg-circular-icon.dcg-hovered .dcg-circular-icon {
+              .dcg-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.dcg-selected .dcg-circular-icon.dcg-hovered .dcg-circular-icon,
+              .dcg-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.dcg-dragging .dcg-circular-icon.dcg-hovered .dcg-circular-icon {
                 border-color: #fff;
                 opacity: 1;
               }
-             .dcg-calculator-api-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.program-loaded .dcg-circular-icon {
+             .dcg-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.program-loaded .dcg-circular-icon {
                 background-color: #30A030;
                 opacity: .8;
               }
-              .dcg-calculator-api-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.program-error .dcg-circular-icon {
+              .dcg-container .dcg-expressionitem.dcg-expressiontext.program-textexpr.program-error .dcg-circular-icon {
                 background-color: #D03030;
                 opacity: .8;
               }
