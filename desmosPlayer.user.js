@@ -375,7 +375,7 @@ let steps;
 let labelIndex = -1;
 let labels = {};
 let debugMode = false;
-let history = [];
+let playerHistory = [];
 let userChanged = false;
 let changeCount = 0;
 let progClosure = undefined;
@@ -412,7 +412,7 @@ function steplog (index, undo) {
 
 function playerButtonColor (el) {
     if (el == revStepButton) {
-        if (history.length > 0 && history[history.length - 1].userChangeCount != changeCount) {
+        if (playerHistory.length > 0 && playerHistory[playerHistory.length - 1].userChangeCount != changeCount) {
             return 'dcg-btn-red';
         }
     }
@@ -518,13 +518,13 @@ function setState (index) {
 function markState (index) {
     if (index >= 0) {
         if (index < steps.length && debugMode && !backStepping) {
-            history.push({i: index, userChangeCount: changeCount, state: Calc.getState()});
+            playerHistory.push({i: index, userChangeCount: changeCount, state: Calc.getState()});
         }
         enableButton(resetButton);
         if (debugMode) enableButton(revStepButton);
     } else {
         disableButton(resetButton);
-        if (history.length == 0) {
+        if (playerHistory.length == 0) {
             disableButton(revStepButton);
         }
     }
@@ -678,7 +678,7 @@ function resetState() {
         currentIndex = -1;
         resetCount++;
         startButton.innerHTML = 'Start';
-        history = [];
+        playerHistory = [];
         markState(-1);
         console.clear();
         testlog('desmosPlayer ready');
@@ -790,7 +790,7 @@ function desmosPlayer (program, properties={}) {
                     if (running) {
                         return;
                     } else if (currentIndex > -1) {
-                        let lastState = history.pop();
+                        let lastState = playerHistory.pop();
                         backStepping = 1;
                         currentIndex = lastState.i - 1;
                         changeCount = lastState.userChangeCount;
@@ -1189,7 +1189,7 @@ function isAProgram (text) {
                         if (!userChanged && !saveButton.classList.contains('dcg-disabled')) {
                             Calc.controller.dispatch({type: 'clear-unsaved-changes'});
                         }
-                    } else if (!document.activeElement.classList.contains('program-textarea')) {
+                    } else if (!document.activeElement?.classList.contains('program-textarea')) {
                         userChanged = 1;
                         changeCount++;
                         if (debugMode && currentIndex >= 0) {
