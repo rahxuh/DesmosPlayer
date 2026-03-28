@@ -881,21 +881,6 @@ function isAProgram (text) {
         }
     }, 100);
 
-    function copyToClipboard (text) {
-        const el = document.activeElement;
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        textArea.style.top = '0';
-        textArea.style.left = '0';
-        textArea.style.position = 'fixed';
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        el.focus();
-    }
-
     // Find the offset in pixels from the top of the expression
     // list to the start of the given element (a displayTextarea).
     function getExprListOffset (exprElem) {
@@ -1013,7 +998,7 @@ function isAProgram (text) {
                     // We did not click in a program or there was no selection.  Copy the ID of the
                     // selected expression to the clipboard.
                     expr = exprArr.filter(e => e.id === selExprId)[0];
-                    copyToClipboard(selExprId);
+                    navigator.clipboard.writeText(selExprId);
                 }
 
                 // Display the ID and index of the indicated expression in the console
